@@ -5,7 +5,19 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady(){
     console.log ('Device is Ready');
-    getMapLocation();
+    $("#btn-getloc").click(function(){
+        getMapLocation();
+    });
+    $("#btn-showmap").click(function(){
+        if ($("#lat").val()) {Latitude = $("#lat").val();}
+        if ($("#long").val()) {Longitude = $("#long").val();}
+        showMap();
+    });
+}
+
+function showMap(){
+    //$( ":mobile-pagecontainer" ).pagecontainer( "change", "mappage.html");
+    getMap(Latitude, Longitude);
 }
 
 function getMapLocation(){
@@ -16,7 +28,9 @@ var onMapSuccess = function (position) {
     Latitude = position.coords.latitude;
     Longitude = position.coords.longitude;
     console.log ("Lat:"+Latitude+"  Long:"+Longitude);
-    getMap(Latitude, Longitude);
+    $("#lat").val(Latitude);
+    $("#long").val(Longitude);
+    //getMap(Latitude, Longitude);
 }
 
 function onMapError(error) {
@@ -25,7 +39,7 @@ function onMapError(error) {
 }
 
 function getMap(latitude, longitude) {
-
+    console.log("Mostrando o mapa para Lat/long"+Latitude+" "+Longitude);
     var mapOptions = {
         center: {lat: -34.397, lng: 150.644},
         zoom: 8 

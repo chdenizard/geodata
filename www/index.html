@@ -14,13 +14,47 @@
         height: 100%;
       }
     </style>
-        <!-- <script type="text/javascript" src="js/cordova-2.0.0.js"></script> -->
+        
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile.js"></script>
         <script type="text/javascript" src="cordova.js"></script> 
+         <!-- <script type="text/javascript" src="js/cordova-2.0.0.js"></script> -->
         <script type="text/javascript" src="js/index.js"></script>
         <title>Testing Geodata</title>
     </head>
     <body>
-            <div id="map"></div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ7z5rQMymv7cjTn6M0SHxMfyAbc38E_Y"></script>
+        <div id="home" data-role="page">
+            <header data-role="header">
+                <h1>GeoData Test</h1>
+            </header>
+            <div data-role="content">
+                <fieldset>
+                    <label for="lat">LATITUDE:</label><input id="lat" type="number" name="lat">
+                    <label for="long">LONGITUDE:</label><input id="long" type="number" name="long">
+                    <button type="button" id="btn-getloc">Get Coords!</button>
+                    <button type="button" id="btn-showmap">Show Map!</button>
+                </fieldset>
+
+            </div>
+            <footer data-role="footer">
+                <h3>Copyright &copy; 2016</h3>
+            </footer>
+        </div>
+        <div id="mappage" data-role="page">
+            <header data-role="header">
+                <h1>Mapa</h1>
+            </header>
+            <div data-role="content">
+                
+            </div>
+            <footer data-role="footer">
+                <h3>Copyright &copy; 2016</h3>
+            </footer>
+        </div>
+        <div id="map"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ7z5rQMymv7cjTn6M0SHxMfyAbc38E_Y"></script>   
     </body>
 </html>
