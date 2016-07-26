@@ -21,7 +21,7 @@ function showMap(){
 }
 
 function getMapLocation(){
-    navigator.geolocation.getCurrentPosition(onMapSuccess, onMapError, {enableHighAccuracy: true});
+    navigator.geolocation.getCurrentPosition(onMapSuccess, onMapError, {enableHighAccuracy: true, timeout: 10000});
 }
 
 var onMapSuccess = function (position) {
@@ -30,6 +30,14 @@ var onMapSuccess = function (position) {
     console.log ("Lat:"+Latitude+"  Long:"+Longitude);
     $("#lat").val(Latitude);
     $("#long").val(Longitude);
+    alert('Latitude: '          + position.coords.latitude          + '\n' +
+              'Longitude: '         + position.coords.longitude         + '\n' +
+              'Altitude: '          + position.coords.altitude          + '\n' +
+              'Accuracy: '          + position.coords.accuracy          + '\n' +
+              'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+              'Heading: '           + position.coords.heading           + '\n' +
+              'Speed: '             + position.coords.speed             + '\n' +
+              'Timestamp: '         + position.timestamp                + '\n');
     //getMap(Latitude, Longitude);
 }
 
