@@ -42,7 +42,7 @@ var onMapSuccess = function (position) {
 }
 
 function onMapError(error) {
-    console.log('code: ' + error.code + '\n' +
+    alert ('code: ' + error.code + '\n' +
         'message: ' + error.message + '\n');
 }
 
